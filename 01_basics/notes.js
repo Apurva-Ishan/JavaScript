@@ -37,6 +37,28 @@ const myFunction = function() {
     // console.log([myObj, heros])
 }
 
-console.log(typeof myObj)
+// console.log(typeof myObj)
 
-myFunction()
+// myFunction()
+
+// Stack (primitive), Heap (reference)
+
+let myWebName = "appyfizz"
+let anotherName = myWebName
+
+anotherName = "ishan"
+
+// console.log(myWebName)
+// console.log(anotherName)
+
+let userOne = {
+    email: "user@google.com",
+    upi_id: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "usertwo@google.com"
+
+console.log(userOne.email)
+console.log(userTwo.email)
