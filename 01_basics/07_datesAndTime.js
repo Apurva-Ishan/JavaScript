@@ -24,7 +24,14 @@ let myTimeStamp = Date.now()
 // console.log(Date.now()/1000)
 
 let newDate = new Date()
-console.log(newDate);
-console.log(newDate.getMonth());
-console.log(newDate.getDate());
-console.log(newDate.getDay());
+// console.log(newDate);
+// console.log(newDate.getMonth() + 1);
+// console.log(newDate.getDate());
+// console.log(newDate.getDay());
+
+// console.log(`Today is ${newDate.getDate()}th and the time is ${newDate.toLocaleTimeString()}`);
+
+console.log(newDate.toLocaleString("default", {
+    weekday: "long",
+    // timeZone: 
+}))
