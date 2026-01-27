@@ -24,6 +24,48 @@
   // }
 
   // attachEvent()
-  // jQuery - on
+  // jQuery - onEventListener
+  
+  // type, timestamp, defalutPrevented
+  // target, toElement, srcElement, currentTarget
+  // clientX, clientY, screenX, screenY
+  // altkey, ctrlkey, shiftkey, keyCode
+
+  // document.getElementById('images').addEventListener('click', function(e) {
+  //   console.log("clicked inside ul");
+  // }, false)
+
+  // document.getElementById('owl').addEventListener('click', function(e) {
+  //   console.log("clicked owl");
+  //   e.stopPropagation() // stops bubbling, the event doesn't go to the outer element
+  // }, false)
+
+  // // false - bubbling, true - capturing
+
+  // document.getElementById('google').addEventListener('click', function(e){
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   console.log("google clicked");
+    
+  // }, false)
+
+  document.getElementById('images').addEventListener('click', function(e){
+    console.log(e.target.tagName);
+    if(e.target.tagName === 'IMG') {
+      console.log(e.target.id);
+      
+      let removeTarget = e.target.parentNode;
+      removeTarget.remove()
+    }
+
+    if(e.target.tagName === 'A') {
+      e.preventDefault();
+      let removeTarget = e.target.parentNode;
+      removeTarget.remove()
+    }
+    
+    // removeTarget.parentNode.removeChild(removeTarget)
+  }, false)
+
 </script>
 </html>
