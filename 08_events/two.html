@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Async in JS</h1>
+  <button id="stop">stop</button>
+  <button id="reset">reset</button>
+</body>
+<script>
+
+  // setTimeout(() => {
+  //   console.log("Ishan");
+    
+  // }, 2000);
+
+  const printRandom = function() {
+    console.log("Ikigai");
+  };
+
+  let headingText = document.querySelector('h1');
+
+  const changeText = function() {
+    headingText.innerHTML = "Async in JavaScript";
+  };
+
+  const changeHeading = setTimeout(changeText, 2000);
+  
+  document.querySelector("#stop").addEventListener('click', function(){
+    clearTimeout(changeHeading);
+    console.log('stopped');
+    
+  }, false);
+
+  document.querySelector("#reset").addEventListener('click', function(){
+    headingText.innerHTML = "Async in JS"
+  }, false);
+
+</script>
+</html>
